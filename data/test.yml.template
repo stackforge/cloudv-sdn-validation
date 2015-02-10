@@ -1,0 +1,14 @@
+tests:
+  - name: $TEST_NAME
+    procedure: load_runner.tests.iperf_pairs_zmq
+    args:
+      iperf_args: $IPERF_ARGS
+    tenants:
+      - name: $OS_TENANT_NAME
+        networks:
+          - name: $TEST_NET_NAME
+            servers:
+              - role: server
+                count: 1
+              - role: client
+                count: 1
